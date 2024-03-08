@@ -1,0 +1,61 @@
+{% comment %}
+    Copyright (C) 2023 Nana Gilbert-Baffoe, Blue Terra, LLC.
+    https://communitypoweredmarketing.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+{% endcomment %}
+
+{% comment "Set the maximum number of newsletters to display" %}{% endcomment %}
+{% assign max_newsletters = 2 %}
+
+{% comment "Initialize the newsletters array" %}{% endcomment %}
+{% assign newsletters = '' | split: ',' %}
+{% assign newsletter_tags = 'Subscriber_BiddyCo, Subscriber_CreatorWizard, Subscriber_WhyWeBuy, Subscriber_ StackedMarketer' | split: ', ' %}
+
+{% comment "Filter out newsletters that the subscriber already has tags for and collect up to max_newsletters" %}{% endcomment %}
+{% assign collected_newsletters = 0 %}
+{% for newsletter_tag in newsletter_tags %}
+  {% if collected_newsletters < max_newsletters %}
+    {% unless subscriber.tags contains newsletter_tag %}
+        {% assign newsletter_tag_array = newsletter_tag | split: ', ' %}
+        {% assign newsletters = newsletters | concat: newsletter_tag_array %}
+        {% assign collected_newsletters = collected_newsletters | plus: 1 %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+{% assign newsletterLen = newsletters | size %}
+
+{% comment "Display snippets corresponding to the newsletters up to max_newsletters" %}{% endcomment %}
+{% for i in (0..max_newsletters) %}
+  {% if newsletters[i] %}
+    {% case newsletters[i] %}
+      {% when 'Subscriber_BiddyCo' %}
+        {{ snippet.biddyco }}
+      {% when 'Subscriber_ StackedMarketer' %}
+        {{ snippet.stacked-marketer }}
+      {% when 'Subscriber_Shopifreaks' %}
+        {{ snippet.shopifreaks }}
+      {% when 'Subscriber_CreatorWizard' %}
+        {{ snippet.creator-wizard }}
+      {% when 'Subscriber_WhyWeBuy' %}
+        {{ snippet.why-we-buy }}
+    {% endcase %}
+  {% endif %}
+{% endfor %}
+
+{% if newsletterLen == 0 %}
+  {% comment "Display alternate ad content if no newsletter is available" %}{% endcomment %}
+  {{ snippet.alternate-content }}
+{% endif %}
