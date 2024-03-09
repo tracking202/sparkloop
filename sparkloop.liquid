@@ -21,7 +21,7 @@
 
 {% comment "Initialize the newsletters array" %}{% endcomment %}
 {% assign newsletters = '' | split: ',' %}
-{% assign newsletter_tags = 'Subscriber_BiddyCo, Subscriber_CreatorWizard, Subscriber_WhyWeBuy, Subscriber_ StackedMarketer' | split: ', ' %}
+{% assign newsletter_tags = 'Subscriber_BiddyCo, Subscriber_CreatorWizard, Subscriber_WhyWeBuy, Subscriber_StackedMarketer' | split: ', ' %}
 
 {% comment "Filter out newsletters that the subscriber already has tags for and collect up to max_newsletters" %}{% endcomment %}
 {% assign collected_newsletters = 0 %}
@@ -43,7 +43,7 @@
     {% case newsletters[i] %}
       {% when 'Subscriber_BiddyCo' %}
         {{ snippet.biddyco }}
-      {% when 'Subscriber_ StackedMarketer' %}
+      {% when 'Subscriber_StackedMarketer' %}
         {{ snippet.stacked-marketer }}
       {% when 'Subscriber_Shopifreaks' %}
         {{ snippet.shopifreaks }}
