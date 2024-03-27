@@ -1,4 +1,5 @@
 # SparkLoop Magic Link Monetization Script
+## This script made free by [The CPM* Community](https://www.skool.com/community-powered-marketing-3266/about). A place for 6-8+ Figure Newsletter and Media publishers to network, exhange ideas and learn from each other. 
 
 [SparkLoop](https://dash.sparkloop.app/signup?aff=e3f393b8) [^1] is a paid newsletter recommendation network that pays you to recommend other quality newsletters to your subscribers.
 
