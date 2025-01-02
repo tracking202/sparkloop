@@ -1,5 +1,5 @@
 # SparkLoop Magic Link Monetization Script
-## This script made free by [The CPM* Community](https://www.skool.com/community-powered-marketing-3266/about). 
+## This script made free by [CPM*](https://www.skool.com/community-powered-marketing-3266/about). 
 [SparkLoop](https://dash.sparkloop.app/signup?aff=e3f393b8) [^1] is a paid newsletter recommendation network that pays you to recommend other quality newsletters to your subscribers.
 
 I built this script to help me maximize each recommendation impression automatically. The script rotates recommendations in your newsletter and keeps track of which ones your subscriber has joined so that they are not shown recommendations they have already subscribed to.
