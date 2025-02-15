@@ -61,7 +61,7 @@ The only line to change is `{{ snippet.alternate-content }}`; however, if you ch
 
 ### Final Setup
 
-You could copy and paste this code into your email templates as is; however, I like to also set up all this code as a snippet as well. It gives you the benefit of an easy spot to update the recommendations block in one spot.
+You could copy and paste this code into your email templates as is; however, I like to also set up all this code as a snippet because it gives you the benefit of an easy spot to update the recommendations block in one spot.
 
 
 
